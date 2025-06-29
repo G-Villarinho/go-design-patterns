@@ -1,12 +1,13 @@
 # Makefile para Design Patterns
 # Comandos para executar exemplos específicos
 
-.PHONY: help builder strategy clean
+.PHONY: help builder singleton strategy clean
 
 # Comando padrão - mostra ajuda
 help:
 	@echo "Comandos disponíveis:"
 	@echo "  make builder    - Executa o exemplo do padrão Builder"
+	@echo "  make singleton  - Executa o exemplo do padrão Singleton"
 	@echo "  make strategy   - Executa o exemplo do padrão Strategy"
 	@echo "  make clean      - Remove arquivos compilados"
 	@echo "  make help       - Mostra esta ajuda"
@@ -15,6 +16,11 @@ help:
 builder:
 	@echo "Executando exemplo do padrão Builder..."
 	@cd creational/builder/example && go run main.go
+
+# Executa o exemplo do padrão Singleton
+singleton:
+	@echo "Executando exemplo do padrão Singleton..."
+	@cd creational/singleton && go run main.go
 
 # Executa o exemplo do padrão Strategy
 strategy:
@@ -30,14 +36,15 @@ clean:
 	@find . -name "*.tmp" -delete
 
 # Comando para executar todos os exemplos
-all: builder strategy
+all: builder singleton strategy
 	@echo "Todos os exemplos foram executados!"
 
 # Comando para listar todos os padrões disponíveis
 list:
 	@echo "Padrões de Design disponíveis:"
 	@echo "  - Builder (creational/builder/example/)"
+	@echo "  - Singleton (creational/singleton/)"
 	@echo "  - Strategy (behavioural/strategy/)"
 	@echo ""
 	@echo "Use 'make <padrão>' para executar um exemplo específico"
-	@echo "Exemplo: make builder" 
+	@echo "Exemplo: make singleton" 

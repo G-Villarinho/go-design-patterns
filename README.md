@@ -19,6 +19,7 @@ make help
 
 # Executar um exemplo específico
 make builder
+make singleton
 make strategy
 
 # Executar todos os exemplos
@@ -39,6 +40,10 @@ Se preferir não usar o Makefile, você pode executar os exemplos diretamente:
 # Builder Pattern
 cd creational/builder/example
 go run main.go
+
+# Singleton Pattern
+cd creational/singleton
+go run database_manager.go example.go
 
 # Strategy Pattern
 cd behavioural/strategy
@@ -75,7 +80,36 @@ go run main.go
 make builder
 ```
 
-### 2. Strategy Pattern (Padrão Estratégia)
+### 2. Singleton Pattern (Padrão Singleton)
+
+**Localização:** `creational/singleton/`
+**📖 [Documentação Detalhada](creational/singleton/README.md)**
+
+**Descrição:** O Singleton é um padrão criacional que garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a ela. Este exemplo implementa um gerenciador de conexão com banco de dados.
+
+**Problema Resolvido:**
+
+- Múltiplas conexões desnecessárias ao banco de dados
+- Consumo excessivo de recursos (memória, conexões TCP)
+- Dificuldade de gerenciamento do estado da conexão
+- Possíveis problemas de performance e escalabilidade
+
+**Cenário Real:** Sistema com múltiplos serviços (UserService, OrderService, PaymentService) que precisam compartilhar uma única conexão com banco de dados.
+
+**Principais Benefícios:**
+
+- ✅ Garantia de uma única instância
+- ✅ Thread safety com sync.Once
+- ✅ Controle centralizado de recursos
+- ✅ Economia de memória e recursos
+
+**Como Executar:**
+
+```bash
+make singleton
+```
+
+### 3. Strategy Pattern (Padrão Estratégia)
 
 **Localização:** `behavioural/strategy/`
 **📖 [Documentação Detalhada](behavioural/strategy/README.md)**
@@ -108,10 +142,14 @@ make strategy
 ```
 design-patterns/
 ├── creational/            # Padrões criacionais
-│   └── builder/          # Padrão Builder
-│       ├── builder.go    # Implementação do padrão
-│       ├── example/      # Exemplo prático
-│       └── README.md     # 📖 [Documentação](creational/builder/README.md)
+│   ├── builder/          # Padrão Builder
+│   │   ├── builder.go    # Implementação do padrão
+│   │   ├── example/      # Exemplo prático
+│   │   └── README.md     # 📖 [Documentação](creational/builder/README.md)
+│   └── singleton/        # Padrão Singleton
+│       ├── database_manager.go  # Implementação do padrão
+│       ├── example.go    # Demonstrações de uso
+│       └── README.md     # 📖 [Documentação](creational/singleton/README.md)
 ├── behavioural/           # Padrões comportamentais
 │   └── strategy/         # Padrão Strategy
 │       ├── main.go       # Exemplo de uso
