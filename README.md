@@ -37,7 +37,7 @@ Se preferir não usar o Makefile, você pode executar os exemplos diretamente:
 
 ```bash
 # Builder Pattern
-cd behavioural/builder/example
+cd creational/builder/example
 go run main.go
 
 # Strategy Pattern
@@ -49,8 +49,8 @@ go run main.go
 
 ### 1. Builder Pattern (Padrão Construtor)
 
-**Localização:** `behavioural/builder/`
-**📖 [Documentação Detalhada](behavioural/builder/README.md)**
+**Localização:** `creational/builder/`
+**📖 [Documentação Detalhada](creational/builder/README.md)**
 
 **Descrição:** O Builder é um padrão criacional que permite construir objetos complexos passo a passo. Este exemplo demonstra a construção de computadores com diferentes configurações.
 
@@ -107,16 +107,16 @@ make strategy
 
 ```
 design-patterns/
+├── creational/            # Padrões criacionais
+│   └── builder/          # Padrão Builder
+│       ├── builder.go    # Implementação do padrão
+│       ├── example/      # Exemplo prático
+│       └── README.md     # 📖 [Documentação](creational/builder/README.md)
 ├── behavioural/           # Padrões comportamentais
-│   ├── builder/          # Padrão Builder
-│   │   ├── builder.go    # Implementação do padrão
-│   │   ├── example/      # Exemplo prático
-│   │   └── README.md     # 📖 [Documentação](behavioural/builder/README.md)
 │   └── strategy/         # Padrão Strategy
 │       ├── main.go       # Exemplo de uso
 │       ├── service/      # Implementação do serviço
 │       └── README.md     # 📖 [Documentação](behavioural/strategy/README.md)
-├── creational/           # Padrões criacionais (futuro)
 ├── structural/           # Padrões estruturais (futuro)
 ├── Makefile             # Comandos para execução
 ├── go.mod               # Dependências do Go

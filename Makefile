@@ -14,7 +14,7 @@ help:
 # Executa o exemplo do padrão Builder
 builder:
 	@echo "Executando exemplo do padrão Builder..."
-	@cd behavioural/builder/example && go run main.go
+	@cd creational/builder/example && go run main.go
 
 # Executa o exemplo do padrão Strategy
 strategy:
@@ -36,7 +36,7 @@ all: builder strategy
 # Comando para listar todos os padrões disponíveis
 list:
 	@echo "Padrões de Design disponíveis:"
-	@echo "  - Builder (behavioural/builder/example/)"
+	@echo "  - Builder (creational/builder/example/)"
 	@echo "  - Strategy (behavioural/strategy/)"
 	@echo ""
 	@echo "Use 'make <padrão>' para executar um exemplo específico"
